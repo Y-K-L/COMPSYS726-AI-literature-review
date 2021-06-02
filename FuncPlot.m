@@ -55,17 +55,21 @@ randx = 10 * rand(100,1)-5;
 for i = 1:100
     for f = 1:length(funcnames)
         func = funcpt{f};
-        runtimes(:,f) = runtime(func,randx);
+        runtimes(:,f) = runtime(func,randx); % run a functoin and its derivative 31000 times in a row
     end
     sums(i,:) = sum(runtimes,1);
 end
 
-% boxplot(runtimes,'Labels',funcnames);
-% ylable("\mu s");
+
 
 
 boxplot(sums,'Labels',funcnames);
 ylable("\mu s");
 
-
-
+% uncomment to get the boxplot for time to run activation function once
+% for f = 1:length(funcnames)
+%     func = funcpt{f};
+%     runtimes(:,f) = runtime(func,randx); % run a functoin and its derivative 31000 times in a row
+% end
+% boxplot(runtimes,'Labels',funcnames);
+% ylable("\mu s");

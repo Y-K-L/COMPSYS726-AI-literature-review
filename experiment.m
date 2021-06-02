@@ -50,7 +50,7 @@ idx = randperm(length(x),N);
 x = x(:,idx);
 y = y(:,idx);
 
-% reserve 15% for testing
+% reserve 15% for validation
 x_val = x(:,1:0.15*N);
 y_val = y(:,1:0.15*N);
 
